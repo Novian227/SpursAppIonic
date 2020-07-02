@@ -13,5 +13,11 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-grid fixed >
+    <ion-row *ngFor="let t of nextmatchList">
+      <ion-col size="12">{{ t.strEvent }}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  
 </ion-content>

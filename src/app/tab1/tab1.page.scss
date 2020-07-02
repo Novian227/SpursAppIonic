@@ -10,7 +10,7 @@
     //     --ion-background-color:#a5a5a8;
     // }
 
-    .card, .card-md, .card-ios {
-        webkit-box-shadow: none;
-        box-shadow: none;
-    }
+    @media (prefers-color-scheme: dark) {
+        .day.dark-scheme   { background:  #333; color: white; }
+        .night.dark-scheme { background: black; color:  #ddd; }
+      }
