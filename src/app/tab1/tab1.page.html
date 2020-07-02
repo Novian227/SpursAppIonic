@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,87 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large"></ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div *ngFor="let t of teams.teams" class="container">
+    <ion-label></ion-label>
+  </div>
+  <ion-grid>
+  <ion-card *ngFor="let t of teams.teams" class="text-center">
+    <img class="badge" src="{{ t.strTeamBadge }}" alt="" height="200px">
+    
+    <ion-card-header>
+      <ion-card-subtitle class="ion-text-center">{{t.strAlternate}}</ion-card-subtitle><br>
+      <ion-card-title>Profile</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content class="ion-text-justify">
+      Tottenham Hotspur Football Club /ˈtɒt(ə)nəm/, commonly referred to as Spurs, is an English football club located in Tottenham, 
+      London, that plays in the Premier League. The club's home stadium is White Hart Lane. Its newly developed training ground is in 
+      Bulls Cross on the northern borders of the London Borough of Enfield. 
+      Founded in 1882, Tottenham won the FA Cup for the first time in 1901, making it the only non-League club to do so since the formation of the Football League.
+    </ion-card-content>
+  </ion-card>
+
+
+
+  
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-card *ngFor="let t of teams.teams">
+            <ion-card-header>
+              <ion-card-title class="ion-text-center">Home Kit</ion-card-title><br>
+              <img src="{{ t.strTeamJersey }}" alt="">
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-card *ngFor="let t of teams.teams">
+            <ion-card-header>
+              <ion-card-title class="ion-text-center">Away Kit</ion-card-title><br>
+              <img src="{{ t.strTeamJersey }}" alt="">
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-card>
+      <ion-list>
+        <ion-item>
+            <ion-grid>
+              <ion-card-title>Last 5 Matches</ion-card-title><br>
+                <ion-row *ngFor="let l of last.results">
+                    <ion-col class="ion-text-center">
+                        <br/>
+                        <ion-card-subtitle>{{ l.strHomeTeam }}</ion-card-subtitle><br/><ion-label>{{ l.intHomeScore }}</ion-label>
+                    </ion-col>
+                    <hr>
+                    <ion-col class="ion-text-center">
+                        <small>{{ l.strDate }}<br/>
+                            {{ l.strTime }}</small>
+                    </ion-col>
+                    <ion-col class="ion-text-center">
+                          <br/>
+                          <ion-card-subtitle>{{ l.strAwayTeam }}</ion-card-subtitle><br/><ion-label>{{ l.intAwayScore }}</ion-label>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+
+  </ion-grid>
+
+
+
+  <div *ngFor="let t of teams.teams" class="text-center">
+    <img src="{{ t.strTeamBanner }}" alt="">
+  </div>
+
 </ion-content>
