@@ -1,9 +1,62 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>detailnext</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title> 
+      <span class="text">{{ asu.title }}</span>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-label>{{ asu.title }}</ion-label>
+  <div style="margin-top: 3rem;">
+    <ion-card>
+      <ion-card-header>
+       
+        <ion-card-subtitle>  {{ asu.league }}</ion-card-subtitle><br>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-text style="font-size: larger; font: 900; font-weight: bolder;" class="ion-text-center" color="primary">
+          <h1 >{{ asu.title }}</h1>
+        </ion-text><br>
+
+        <div id="center">
+          <ion-icon name="football-outline"></ion-icon>
+        </div>
+
+        <ion-list >
+          <div >
+            <ion-item>
+              <ion-label class="ion-text-center">Season</ion-label>
+              <ion-label class="ion-text-center">{{ asu.season }}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-center">Type</ion-label>
+              <ion-label class="ion-text-center">{{ asu.type }}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-center">Date</ion-label>
+              <ion-label class="ion-text-center">{{ asu.date | date: 'dd MMM yyyy' }}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-center">Kick off</ion-label>
+              <ion-label class="ion-text-center">{{ asu.time }}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-center">Round</ion-label>
+              <ion-label class="ion-text-center">{{ asu.round }}</ion-label>
+            </ion-item>
+          </div>
+        </ion-list><br>
+
+        <div id="center">
+          <ion-button (click)="save()" class="float-right"> Favorite</ion-button>
+        </div>
+      </ion-card-content>
+
+
+      
+    </ion-card>
+  </div>
 </ion-content>

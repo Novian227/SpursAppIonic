@@ -19,15 +19,20 @@ export class Tab2Page implements OnInit{
       this.nextmatchList = result['events'];
     });
 
-    // this.spursService.getDetail().subscribe(result => {
-    //   this.teams = result;
-    //   this.teamname = result['teams']['strTeam'];
-    // })
+    this.spursService.getDetail().subscribe(result => {
+      this.last = result;
+    })
   }
 
   nextdetail(t:string): void{
     let asu = {
-      title: t['strEvent']
+      title: t['strEvent'],
+      league: t['strLeague'],
+      season: t['strSeason'],
+      type: t['strSport'],
+      round: t['intRound'],
+      time: t['strTime'],
+      date: t['dateEvent'],
     };
   
     let extras: NavigationExtras = {
