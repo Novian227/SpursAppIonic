@@ -1,5 +1,11 @@
-ion-tabs{
+ion-tab-bar, ion-tab-button{
+    background-color: #6370ff;
+}
+   
+ion-icon{
+     color: #d7d8da;
+}
 
-    --ion-tabbar-background-color:blue;
-    --ion-tabs-background-color:var(--ion-tabbar-background-color, #ffffff);
-    }
+ion-label{
+    color: white;
+}
