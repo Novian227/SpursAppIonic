@@ -8,11 +8,15 @@ import { DetailnextPageRoutingModule } from './detailnext-routing.module';
 
 import { DetailnextPage } from './detailnext.page';
 
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    SweetAlert2Module,
     DetailnextPageRoutingModule
   ],
   declarations: [DetailnextPage]
