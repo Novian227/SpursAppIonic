@@ -25,13 +25,38 @@
       <ion-card-subtitle class="ion-text-center">{{t.strAlternate}}</ion-card-subtitle><br>
       <ion-card-title> Profile</ion-card-title>
     </ion-card-header>
+    
+    <ion-list>
+      <ion-item>
+        <ion-card-subtitle >Founded</ion-card-subtitle>
+          <ion-item>
+            <ion-card-subtitle>:</ion-card-subtitle>
+          </ion-item>
+        <ion-card-subtitle class="ion-padding-start">{{ t.intFormedYear }}</ion-card-subtitle>
+      </ion-item>
+      <ion-item>
+        <ion-card-subtitle>Stadium‎‏‏‎ ‎</ion-card-subtitle>
+          <ion-item>
+            <ion-card-subtitle>:</ion-card-subtitle>
+          </ion-item>
+        <ion-card-subtitle class="ion-padding-start">{{ t.strStadium }}</ion-card-subtitle>
+      </ion-item>
+      <ion-item>
+        <ion-card-subtitle>League‎e‏‏‎</ion-card-subtitle>
+          <ion-item>
+            <ion-card-subtitle>:</ion-card-subtitle>
+          </ion-item>
+        <ion-card-subtitle class="ion-padding-start">{{ t.strLeague }}</ion-card-subtitle>
+      </ion-item>
+      <ion-card-content class="ion-text-justify">
+        Tottenham Hotspur Football Club /ˈtɒt(ə)nəm/, commonly referred to as Spurs, is an English football club located in Tottenham, 
+        London, that plays in the Premier League. The club's home stadium is White Hart Lane. Its newly developed training ground is in 
+        Bulls Cross on the northern borders of the London Borough of Enfield. 
+        Founded in 1882, Tottenham won the FA Cup for the first time in 1901, making it the only non-League club to do so since the formation of the Football League.
+      </ion-card-content>
+    </ion-list>
   
-    <ion-card-content class="ion-text-justify">
-      Tottenham Hotspur Football Club /ˈtɒt(ə)nəm/, commonly referred to as Spurs, is an English football club located in Tottenham, 
-      London, that plays in the Premier League. The club's home stadium is White Hart Lane. Its newly developed training ground is in 
-      Bulls Cross on the northern borders of the London Borough of Enfield. 
-      Founded in 1882, Tottenham won the FA Cup for the first time in 1901, making it the only non-League club to do so since the formation of the Football League.
-    </ion-card-content>
+
   </ion-card>
 
 
@@ -43,7 +68,7 @@
           <ion-card *ngFor="let t of teams.teams">
             <ion-card-header>
               <ion-card-title class="ion-text-center">Home Kit</ion-card-title><br>
-              <img src="{{ t.strTeamJersey }}" alt="">
+              <img class="kit" src="{{ t.strTeamJersey }}" alt="">
             </ion-card-header>
           </ion-card>
         </div>
@@ -53,7 +78,7 @@
           <ion-card *ngFor="let t of teams.teams">
             <ion-card-header>
               <ion-card-title class="ion-text-center">Away Kit</ion-card-title><br>
-              <img src="{{ t.strTeamJersey }}" alt="">
+              <img class="kit" src="{{ t.strTeamJersey }}" alt="">
             </ion-card-header>
           </ion-card>
         </div>
@@ -70,15 +95,18 @@
                         <br/>
                         <ion-card-subtitle>{{ l.strHomeTeam }}</ion-card-subtitle><br/><ion-label>{{ l.intHomeScore }}</ion-label>
                     </ion-col>
-                    <hr>
-                    <ion-col class="ion-text-center">
-                        <small>{{ l.strDate }}<br/>
+                    
+                    <ion-col class="ion-text-center ion-margin-top">
+                        <small>{{ l.dateEvent | date: 'dd MMM yyyy' }}<br/>
                             {{ l.strTime }}</small>
+                            <hr>   
                     </ion-col>
+                    
                     <ion-col class="ion-text-center">
                           <br/>
                           <ion-card-subtitle>{{ l.strAwayTeam }}</ion-card-subtitle><br/><ion-label>{{ l.intAwayScore }}</ion-label>
                     </ion-col>
+                    <!-- <hr> -->
                 </ion-row>
             </ion-grid>
         </ion-item>
@@ -89,8 +117,8 @@
 
 
 
-  <div *ngFor="let t of teams.teams" class="text-center">
-    <img src="{{ t.strTeamBanner }}" alt="">
+  <div class="badge" *ngFor="let t of teams.teams" class="text-center">
+    <img class="badge" src="{{ t.strTeamBanner }}" alt="">
   </div>
 
 </ion-content>

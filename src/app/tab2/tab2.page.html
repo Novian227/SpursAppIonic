@@ -13,11 +13,34 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-grid fixed >
-    <ion-row *ngFor="let t of nextmatchList">
-      <ion-col size="12">{{ t.strEvent }}</ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Next 5 Games</ion-card-title>
+    </ion-card-header>
+  </ion-card>
 
   
+  <ion-card  *ngFor="let t of nextmatchList">
+    <ion-list>
+      <ion-item >
+        <ion-grid  fixed (click)="nextdetail(t)">
+          <ion-row >
+            
+              <ion-col size="11">{{ t.strEvent }}<br>
+
+                <ion-card-subtitle>Date : {{ t.dateEvent | date: 'dd MMM yyyy' }}</ion-card-subtitle>
+                <ion-card-subtitle>Kick off : {{ t.strTime }}</ion-card-subtitle>
+              </ion-col>
+
+              <ion-col size="1">
+                <ion-icon size="large" name="football-outline"></ion-icon>
+              </ion-col>
+              
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  
+
 </ion-content>

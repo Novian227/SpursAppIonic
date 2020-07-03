@@ -5,12 +5,28 @@
     padding-top: 2rem;
     }
 
+    .kit{
+      width: auto;
+      margin: auto;
+      display: block;
+      }
+
     // ion-content{
 
     //     --ion-background-color:#a5a5a8;
     // }
 
-    @media (prefers-color-scheme: dark) {
-        .day.dark-scheme   { background:  #333; color: white; }
-        .night.dark-scheme { background: black; color:  #ddd; }
-      }
+    .fixed
+    {
+        position: fixed;
+        top: 20px;
+    }
+
+    hr {
+      border: 0.5px solid rgb(243, 243, 243) !important;
+      height: 0.5px !important;
+      width: 75px !important;
+      display: block;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
