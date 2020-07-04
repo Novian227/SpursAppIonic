@@ -28,7 +28,7 @@ export class DetailnextPage implements OnInit {
     let data    = JSON.parse(localStorage.getItem('fav')) || [],
         isExist = data.findIndex((obj) => {
           // Disini semua value akan di kompare untuk di validasi berdasarkan "keunikannya"
-          return obj.date == this.asu.date; 
+          return obj.date == this.asu.date && obj.time == this.asu.time && obj.round == this.asu.round && obj.title == this.asu.title; 
         }) != -1;
   
     if (isExist) {

@@ -8,7 +8,14 @@ export class SpursService {
   lookup = 'https://www.thesportsdb.com/api/v1/json/1/lookupteam.php';
   lastmatch = 'https://www.thesportsdb.com/api/v1/json/1/eventslast.php';
   nextmatch = 'https://www.thesportsdb.com/api/v1/json/1/eventsnext.php';
-  teamid = '133616';
+  /**Team Id
+   * Tottenham    133616.
+   * Arsenal      133604.
+   * Aston Villa  133601.
+   * Bournemouth  134301.
+   * Burnley      133623.
+  */
+  teamid = '133616'; 
 
   constructor(private http: HttpClient) { }
 

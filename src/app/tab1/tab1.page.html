@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="false" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large"></ion-title>
@@ -19,7 +19,9 @@
   </div>
   <ion-grid>
   <ion-card *ngFor="let t of teams.teams" class="text-center">
-    <img class="badge" src="{{ t.strTeamBadge }}" alt="" height="200px">
+    
+      <img class="badge" src="{{ t.strTeamBadge }}" alt="" height="200px">
+      
     
     <ion-card-header>
       <ion-card-title> Profile</ion-card-title>
@@ -48,7 +50,7 @@
         <ion-card-subtitle class="ion-padding-start">{{ t.strLeague }}</ion-card-subtitle>
       </ion-item>
       <ion-card-content class="ion-text-justify">
-        {{ t.strDescriptionEN }}
+        {{ trimString(t.strDescriptionEN, 300) }}
       </ion-card-content>
     </ion-list>
   
