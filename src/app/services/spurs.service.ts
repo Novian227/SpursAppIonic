@@ -8,6 +8,7 @@ export class SpursService {
   lookup = 'https://www.thesportsdb.com/api/v1/json/1/lookupteam.php';
   lastmatch = 'https://www.thesportsdb.com/api/v1/json/1/eventslast.php';
   nextmatch = 'https://www.thesportsdb.com/api/v1/json/1/eventsnext.php';
+  allteam = 'https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php';
   /**Team Id
    * Tottenham    133616.
    * Arsenal      133604.
@@ -16,6 +17,7 @@ export class SpursService {
    * Burnley      133623.
   */
   teamid = '133616'; 
+  league = 'English Premier League';
 
   constructor(private http: HttpClient) { }
 
@@ -29,5 +31,9 @@ export class SpursService {
 
   getNextMatch(){
     return this.http.get(`${this.nextmatch}?id=${this.teamid}`);
+  }
+
+  getAllTeams(){
+    return this.http.get(`${this.allteam}?l=${this.league}`);
   }
 }

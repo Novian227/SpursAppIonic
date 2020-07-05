@@ -91,7 +91,7 @@
                 <ion-row *ngFor="let l of last.results">
                     <ion-col class="ion-text-center">
                         <br/>
-                        <ion-card-subtitle>{{ l.strHomeTeam }}</ion-card-subtitle><br/><ion-label>{{ l.intHomeScore }}</ion-label>
+                        <ion-card-subtitle>{{ trimString(l.strHomeTeam, 9) }}</ion-card-subtitle><br/><ion-label>{{ l.intHomeScore }}</ion-label>
                     </ion-col>
                     
                     <ion-col class="ion-text-center ion-margin-top">
