@@ -17,6 +17,14 @@ export class SpursService {
    * Burnley      133623.
   */
   teamid = '133616'; 
+
+    /**League Name
+   * English Premier League
+   * Spanish La Liga
+   * German Bundesliga
+   * Italian Serie A
+   * American Major League
+  */
   league = 'English Premier League';
 
   constructor(private http: HttpClient) { }

@@ -9,8 +9,6 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class Tab2Page implements OnInit{
   public nextmatchList;
-  public teams = {};
-  public teamname = '';
   public last = {};
   constructor(private spursService: SpursService, private router: Router) {}
 
@@ -36,8 +34,8 @@ export class Tab2Page implements OnInit{
     };
   
     let extras: NavigationExtras = {
-      queryParams: {
-        special: JSON.stringify(asu)
+      state: {
+        special: asu
       }
     };
     this.router.navigate(['/detailnext'], extras);

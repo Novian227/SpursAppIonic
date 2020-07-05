@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="tertiary">
-    <ion-title>Premier League Teams</ion-title>
+    <ion-title>Rival Watch</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,8 +17,14 @@
             <p>{{ epl.strStadiumLocation }}</p>
         </ion-label>
         <ion-button color="tertiary">
+          <ion-icon name="image-outline"></ion-icon>
+          <ion-text style="margin-left: 0.1rem;">
+            <p>Img</p>
+          </ion-text>
+        </ion-button>
+        <ion-button color="tertiary" (click)="eplel(epl)">
           <ion-icon name="eye-outline"></ion-icon>
-          <ion-text style="margin-left: 0.5rem;">
+          <ion-text style="margin-left: 0.1rem;">
             <p> View</p>
           </ion-text>
         </ion-button>

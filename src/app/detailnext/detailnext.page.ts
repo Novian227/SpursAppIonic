@@ -18,6 +18,9 @@ export class DetailnextPage implements OnInit {
       if (params && params.special) {
         this.asu = JSON.parse(params.special);
       }
+      if (this.router.getCurrentNavigation().extras.state){
+        this.asu = this.router.getCurrentNavigation().extras.state.special
+      }
     })
   }
 
