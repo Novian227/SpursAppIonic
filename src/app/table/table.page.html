@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Premier League 19/20 Standing</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-grid fixed>
+  <table id="customers" style="padding-top: 4cm;">
+    <thead class="ion-text-center">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>M</th>
+      <th>GD</th>
+      <th>W</th>
+      <th>D</th>
+      <th>L</th>
+      <th>P</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let t of table.table; let i = index">
+      <tr>
+        <td>{{ i+1 }}</td>
+        <td>{{ t.name }}</td>
+        <td>{{ t.played }}</td>
+        <td>{{ t.goalsdifference }}</td>
+        <td>{{ t.win }}</td>
+        <td>{{ t.draw }}</td>
+        <td>{{ t.loss }}</td>
+        <td>{{ t.total }}</td>
+
+        </tr>
+        </tbody>
+  </table>
+</ion-grid>
+
+<ion-content>
+
+</ion-content>

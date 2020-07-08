@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'banner',
     loadChildren: () => import('./banner/banner.module').then( m => m.BannerPageModule)
+  },
+  {
+    path: 'table',
+    loadChildren: () => import('./table/table.module').then( m => m.TablePageModule)
   }
 ];
 @NgModule({

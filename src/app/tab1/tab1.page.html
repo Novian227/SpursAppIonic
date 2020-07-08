@@ -4,16 +4,16 @@
     <ion-title>
       Home
     </ion-title>
+    <ion-button [routerLink]="['/table']" color="light" fill="clear" slot="end" style="margin-right: 1rem;">
+      <ion-icon name="trophy-outline"></ion-icon>
+      <ion-label>
+        ‏‏‎ ‎ Table
+      </ion-label>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="false" class="ion-padding">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large"></ion-title>
-    </ion-toolbar>
-  </ion-header>
-
 
   <ion-grid fixed>
     <ion-card *ngFor="let t of teams.teams" class="text-center">
