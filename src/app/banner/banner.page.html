@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ list.name }} Media</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-slides>
+
+      <ion-slide>
+        <div class="slide">
+          <img src="{{ list.pic1 }}"/>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <img src="{{ list.pic2 }}"/>
+      </ion-slide>
+
+      <ion-slide>
+        <img src="{{ list.pic3 }}"/>
+      </ion-slide>
+
+      <ion-slide>
+        <img src="{{ list.pic4 }}"/>
+      </ion-slide>
+
+    </ion-slides>
+  </ion-grid>
+</ion-content>

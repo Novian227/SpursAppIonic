@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'epldetails',
     loadChildren: () => import('./epldetails/epldetails.module').then( m => m.EpldetailsPageModule)
+  },
+  {
+    path: 'banner',
+    loadChildren: () => import('./banner/banner.module').then( m => m.BannerPageModule)
   }
 ];
 @NgModule({

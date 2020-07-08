@@ -16,26 +16,28 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card *ngFor="let fv of fav">
-    <ion-grid fixed>
-      <ion-row>
-        <ion-col size="10">
-          <ion-card-header>
-            <ion-card-title>{{ fv.title }}</ion-card-title><br>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-card-subtitle>Date : {{ fv.date | date: 'dd MMM yyyy' }}</ion-card-subtitle>
-            <ion-card-subtitle>Kick off : {{ fv.time }}</ion-card-subtitle>
-          </ion-card-content>
-        </ion-col>
-        <ion-col size="2">
-          <div style="margin-top: 2rem;">
-            <ion-icon color="light" size="large" name="star-outline"></ion-icon>
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
+  <ion-grid fixed>
+    <ion-card *ngFor="let fv of fav">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="10">
+            <ion-card-header>
+              <ion-card-title>{{ fv.title }}</ion-card-title><br>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-card-subtitle>Date : {{ fv.date | date: 'dd MMM yyyy' }}</ion-card-subtitle>
+              <ion-card-subtitle>Kick off : {{ fv.time }}</ion-card-subtitle>
+            </ion-card-content>
+          </ion-col>
+          <ion-col size="2">
+            <div style="margin-top: 2rem;">
+              <ion-icon color="light" size="large" name="star-outline"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </ion-grid>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button  (click)="delete()" color="tertiary">

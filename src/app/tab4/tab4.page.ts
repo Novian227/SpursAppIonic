@@ -30,9 +30,9 @@ export class Tab4Page implements OnInit {
       league: epl['strLeague'],
       kit: epl['strTeamJersey'],
       stadiumname: epl['strStadium'],
-      // stadiumimg: epl['strStadiumThumb'],
-      // stadiumdesc: epl['strStadiumDescription'],
-      // stadiummap: epl ['strStadiumLocation'],
+      stadiumimg: epl['strStadiumThumb'],
+      stadiumdesc: epl['strStadiumDescription'],
+      stadiummap: epl ['strStadiumLocation'],
       desc: epl['strDescriptionEN'],
     }
 
@@ -44,5 +44,24 @@ export class Tab4Page implements OnInit {
     this.router.navigate(['/epldetails'], extras);
   
   }
+
+  banner(epl:string): void {
+    let list = {
+      name: epl['strTeam'],
+      pic1: epl['strTeamFanart1'],
+      pic2: epl['strTeamFanart2'],
+      pic3: epl['strTeamFanart3'],
+      pic4: epl['strTeamFanart4'],
+    }
+
+    let extras: NavigationExtras = {
+      state: {
+        special: list
+      }
+    };
+    this.router.navigate(['/banner'], extras);
+  
+  }
+
 
 }

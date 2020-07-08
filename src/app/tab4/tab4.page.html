@@ -6,29 +6,31 @@
 
 <ion-content class="ion-padding">
   
-  <ion-list>
-    <ion-item *ngFor='let epl of teams.teams'>
-        <ion-avatar slot="start">
-            <img src="{{ epl.strTeamBadge }}" alt="">
-        </ion-avatar>
-        <ion-label>
-            <h2>{{ epl.strTeam}}</h2>
-            <h3>{{ epl.strStadium }}</h3>
-            <p>{{ epl.strStadiumLocation }}</p>
-        </ion-label>
-        <ion-button color="tertiary">
-          <ion-icon name="image-outline"></ion-icon>
-          <ion-text style="margin-left: 0.1rem;">
-            <p>Img</p>
-          </ion-text>
-        </ion-button>
-        <ion-button color="tertiary" (click)="eplel(epl)">
-          <ion-icon name="eye-outline"></ion-icon>
-          <ion-text style="margin-left: 0.1rem;">
-            <p> View</p>
-          </ion-text>
-        </ion-button>
-    </ion-item>
-</ion-list>
+  <ion-grid fixed>
+    <ion-list>
+      <ion-item *ngFor='let epl of teams.teams'>
+          <ion-avatar slot="start">
+              <img src="{{ epl.strTeamBadge }}" alt="">
+          </ion-avatar>
+          <ion-label>
+              <h2>{{ epl.strTeam}}</h2>
+              <h3>{{ epl.strStadium }}</h3>
+              <p>{{ epl.strStadiumLocation }}</p>
+          </ion-label>
+          <ion-button color="tertiary" (click)="banner(epl)">
+            <ion-icon name="image-outline"></ion-icon>
+            <ion-text style="margin-left: 0.1rem;">
+              <p>Img</p>
+            </ion-text>
+          </ion-button>
+          <ion-button color="tertiary" (click)="eplel(epl)">
+            <ion-icon name="eye-outline"></ion-icon>
+            <ion-text style="margin-left: 0.1rem;">
+              <p> View</p>
+            </ion-text>
+          </ion-button>
+      </ion-item>
+  </ion-list>
+  </ion-grid>
 
 </ion-content>

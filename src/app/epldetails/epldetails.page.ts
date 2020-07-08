@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SpursService } from '../services/spurs.service';
 
 @Component({
   selector: 'app-epldetails',
@@ -9,8 +10,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EpldetailsPage implements OnInit {
 
   list: any;
+  public last = {};
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private route: ActivatedRoute, private router: Router, private spursService: SpursService) {
     this.route.queryParams.subscribe(params => {
       if (params && params.special) {
         this.list = JSON.parse(params.special);
@@ -21,7 +23,11 @@ export class EpldetailsPage implements OnInit {
     })
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    this.spursService.getLastMatch().subscribe(result => {
+      this.last = result;
+    })
+  }
 
   trimString(string, length) {
     return string.length > length
