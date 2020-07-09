@@ -11,6 +11,7 @@ export class Tab1Page implements OnInit {
   public teams = {};
   public teamname = '';
   public last = {};
+  public player = {};
 
   constructor(private spursService: SpursService) {}
 
@@ -22,6 +23,10 @@ export class Tab1Page implements OnInit {
 
     this.spursService.getLastMatch().subscribe(result => {
       this.last = result;
+    })
+
+    this.spursService.getPlayer().subscribe(result => {
+      this.player = result;
     })
   }
 

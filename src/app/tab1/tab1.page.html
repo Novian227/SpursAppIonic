@@ -14,6 +14,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="false" class="ion-padding">
+  
+
 
   <ion-grid fixed>
     <ion-card *ngFor="let t of teams.teams" class="text-center">
@@ -38,7 +40,7 @@
             <ion-card-subtitle class="ion-padding-start">{{ t.strStadium }}</ion-card-subtitle>
           </ion-item>
           <ion-item>
-            <ion-card-subtitle>League‎e‏‏‎</ion-card-subtitle>
+            <ion-card-subtitle>League‎‏‏‎‏‏‎ ‎‏‏‎ ‎</ion-card-subtitle>
               <ion-item>
                 <ion-card-subtitle>:</ion-card-subtitle>
               </ion-item>
@@ -49,7 +51,6 @@
           </ion-card-content>
         </ion-list>
       </ion-card>
-    
       <ion-row>
         <ion-col>
           <div>
@@ -107,6 +108,20 @@
               </ion-grid>
           </ion-item>
         </ion-list>
+      </ion-card>
+
+      <ion-card *ngFor="let p of player.player">
+        <ion-card-header>
+          <ion-card-title>Featured Player</ion-card-title><br>
+        </ion-card-header>
+        <img src="{{ p.strCutout }}"/>
+        <ion-card-header>
+          <ion-card-subtitle>{{ p.strTeam }}</ion-card-subtitle>
+          <ion-card-title>{{ p.strPlayer }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="ion-text-justify">
+          {{ trimString(p.strDescriptionEN, 500) }}
+        </ion-card-content>
       </ion-card>
   
     <div class="badge" *ngFor="let t of teams.teams" class="text-center">
