@@ -6,36 +6,37 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-grid fixed>
-  <table id="customers" style="margin-top: 2rem;">
-    <thead class="ion-text-center">
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>M</th>
-      <th>GD</th>
-      <th>W</th>
-      <th>D</th>
-      <th>L</th>
-      <th>P</th>
-    </tr>
-    </thead>
-    <tbody *ngFor="let t of table.table; let i = index">
-      <tr>
-        <td>{{ i+1 }}</td>
-        <td>{{ t.name }}</td>
-        <td>{{ t.played }}</td>
-        <td>{{ t.goalsdifference }}</td>
-        <td>{{ t.win }}</td>
-        <td>{{ t.draw }}</td>
-        <td>{{ t.loss }}</td>
-        <td>{{ t.total }}</td>
 
+<ion-content class="ion-padding">
+  <ion-grid fixed>
+    <ion-card>
+      <table id="customers">
+        <thead class="ion-text-center">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>M</th>
+          <th>GD</th>
+          <th>W</th>
+          <th>D</th>
+          <th>L</th>
+          <th>P</th>
         </tr>
-        </tbody>
-  </table>
-</ion-grid>
-
-<ion-content>
-
+        </thead>
+        <tbody *ngFor="let t of table.table; let i = index">
+          <tr>
+            <td>{{ i+1 }}</td>
+            <td>{{ t.name }}</td>
+            <td>{{ t.played }}</td>
+            <td>{{ t.goalsdifference }}</td>
+            <td>{{ t.win }}</td>
+            <td>{{ t.draw }}</td>
+            <td>{{ t.loss }}</td>
+            <td>{{ t.total }}</td>
+    
+            </tr>
+            </tbody>
+      </table>
+    </ion-card>
+  </ion-grid>  
 </ion-content>

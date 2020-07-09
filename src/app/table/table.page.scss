@@ -1,5 +1,6 @@
 #customers {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
     border-collapse: collapse;
     width: 100%;
     padding: 20px;
@@ -13,12 +14,12 @@
   
   #customers tr:nth-child(even){background-color: #f2f2f2;}
   
-  #customers tr:hover {background-color: #ddd;}
+  #customers tr:hover {background-color: rgb(31, 53, 179);}
   
   #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #3880ff;
+    background-color: #132257;
     color: white;
   }

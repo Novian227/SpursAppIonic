@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SpursService } from '../services/spurs.service';
 import { NavigationExtras, Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-tab4',
@@ -13,14 +15,24 @@ export class Tab4Page implements OnInit {
   public epl_list = '';
   public teamdetails = {};
 
-  constructor(private spursService: SpursService, private router: Router) {}
+  constructor(private spursService: SpursService, private router: Router, public loadingController: LoadingController) {}
 
-  ngOnInit(): void {
-    this.spursService.getAllTeams().subscribe(result => {
-      this.teams = result;
-      this.teamdetails = result['teams'];
-    })
-  }
+
+  async ngOnInit(): Promise<void> {
+    const loading = await this.loadingController.create({
+      message: 'Please wait...',
+      duration: 3000,
+      backdropDismiss: true
+    });
+
+    await loading.present(); {
+      this.spursService.getAllTeams().subscribe(result => {
+        this.teams = result;
+        this.teamdetails = result['teams'];
+      })
+    }
+    await loading.onDidDismiss();
+}
 
   eplel(epl:string): void {
     let list = {
